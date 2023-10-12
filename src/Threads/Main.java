@@ -7,17 +7,25 @@ public class Main {
 //		minhaThread.start();
 //		MinhaThread minhaThread2 = new MinhaThread();
 //		minhaThread2.start();
-		
 		//MinhaThread2 minhaThread2 = new MinhaThread2();
-		Thread thread = new Thread(new MinhaThread2());
+//		Thread thread = new Thread(new MinhaThread2());
+//		thread.start();
+		//thread.join();
+//		Thread thread2 = new Thread(new MinhaThread2());
+//		thread2.start();
+		//thread2.join();
+		
+		Armazena armazena = new Armazena();
+		Thread thread = new Thread(new ExecutandoTarefa(armazena));
 		thread.start();
 		
-		//thread.join();
-		
-		Thread thread2 = new Thread(new MinhaThread2());
+		Thread thread2 = new Thread(new ExecutandoTarefa(armazena));
 		thread2.start();
 		
-		//thread2.join();
+		thread.join();
+		thread2.join();
+		
+		System.out.println(armazena.cont);
 
 	}
 
