@@ -7,7 +7,7 @@ public class Main {
 //		minhaThread.start();
 //		MinhaThread minhaThread2 = new MinhaThread();
 //		minhaThread2.start();
-		//MinhaThread2 minhaThread2 = new MinhaThread2();
+//		MinhaThread2 minhaThread2 = new MinhaThread2();
 //		Thread thread = new Thread(new MinhaThread2());
 //		thread.start();
 		//thread.join();
@@ -19,10 +19,11 @@ public class Main {
 		Thread thread = new Thread(new ExecutandoTarefa(armazena));
 		thread.start();
 		
+		thread.join();
 		Thread thread2 = new Thread(new ExecutandoTarefa(armazena));
 		thread2.start();
 		
-		thread.join();
+		
 		thread2.join();
 		
 		System.out.println(armazena.cont);
